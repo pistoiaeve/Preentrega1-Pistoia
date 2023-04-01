@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "TT font";
+    src: local("TT font"),
+     url("../../fonts/TT\ Tricks\ Stencil\ Trial\ Black.otf") format("truetype");
+    }
+.imagenLogo{
+    width: 100px;
+}
+.navbar{
+    background-color: black;
+}
+.nav-item a{
+    color: white;
+    font-family: "TT font";
+    text-transform: uppercase;
+}
+
+.nav-item a:hover{
+    color: rgb(253, 3, 232);
+}
