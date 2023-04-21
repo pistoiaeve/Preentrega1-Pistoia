@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { pedirProductos } from '../../helpers/pedirProductos';
 import { ItemList } from '../ItemList/ItemList';
+import Spinner from 'react-bootstrap/Spinner';
 
 export const ItemListContainer = (props) => {
 
@@ -13,7 +14,6 @@ export const ItemListContainer = (props) => {
     pedirProductos()
     .then((res)=>{
       setItems(res)
-      console.log(res)
     })
     .catch((error)=> console.log(error))
     .finally(()=>{
@@ -23,9 +23,13 @@ export const ItemListContainer = (props) => {
 
   return (
     <>
+    {
     loading
-    ?<h2>Cargando...</h2>
+    ?<h2>Cargando...<Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner></h2>
     :<ItemList productos={items}/>
+}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import {stock} from '../data/stock';
+import {stock} from '../data/stock'
 
 export const pedirProductos= ()=>{
     
