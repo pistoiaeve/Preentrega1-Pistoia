@@ -1,6 +1,6 @@
 .cart{
-    background-color: black;
     color: white;
-    text-align:right;
-    font-size: 30px;
+}
+.cart:hover{
+    color: #ed3ca0;
 }

@@ -1,0 +1,30 @@
+.cardDescription img{
+        width: 29rem;
+        align-self: center;
+}
+
+.cardDescription{
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    font-family: TT font;
+    text-align: center;
+    padding-bottom: 5rem;
+}
+.addToCart{
+    background-color: black;
+    border:  #ed3ca0 solid;
+    margin-top: 30px;
+    height: 50px;
+}
+.addToCart:hover{
+    background-color: #ed3ca0;
+    border: black solid;
+}
+.cardBody p{
+    font-size: 13px;
+}
+.cardBody{
+    display: flex;
+    flex-direction: column;
+}

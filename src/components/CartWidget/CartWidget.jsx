@@ -4,8 +4,8 @@ import './stylescart.css'
 
 export const CartWidget = () => {
   return (
-    <div className="cart">1
-      <CgShoppingCart />
+    <div>
+      <CgShoppingCart className='cart' size={20}/>
     </div>
 
   )

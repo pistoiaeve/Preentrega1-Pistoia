@@ -1,10 +1,20 @@
 .fila img{
-    width: 200px;
-    height: 250px;
+    width: 29rem;
+    height: 40rem;
+    align-self: center;
+    margin-top: 0.3rem;
 }
 .fila{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
+}
+.container h3{
+    font-family: TT font;
+    color:white;
+    font-size: 50px;
+    padding: 30px;
+    text-align: center;
+    letter-spacing: 8px;
 }

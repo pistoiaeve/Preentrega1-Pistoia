@@ -3,18 +3,31 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { NavBar } from "./components/NavBar/NavBar";
 import { ItemCount } from './components/ItemCount/ItemCount';
-import{Pika} from './components/Pika/Pika';
+// import{Pika} from './components/Pika/Pika';
+import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer';
+import { 
+  BrowserRouter as Router,
+  Routes, 
+  Navigate,
+  Route,
+} from 'react-router-dom'
+
 
 function App() {
   return (
-    <>
-    <div>
+  <div className='App'>
+    <Router>
       <NavBar/>
-      <ItemListContainer saludo="Hola mundo"/>
-      <ItemCount/>
-      {/*<Pika/>*/}
-    </div>
-    </>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        {/*<Route path='/counter' element={<ItemCount/>} />
+        <Route path='/pika' element={<Pika/>}/>*/}
+        <Route path='*' element={<Navigate to='/' />}/>
+        <Route path='/productos/:categoryId' element={<ItemListContainer/>} />
+        <Route path='/detail/:itemId' element={<ItemDetailContainer/>} /> 
+      </Routes>
+    </Router>
+  </div>
   );
 }
 

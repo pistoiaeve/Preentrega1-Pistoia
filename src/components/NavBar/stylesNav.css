@@ -1,20 +1,24 @@
 @font-face {
     font-family: "TT font";
     src: local("TT font"),
-     url("../../fonts/TT\ Tricks\ Stencil\ Trial\ Black.otf") format("truetype");
+     url("../../fonts/NHLDALLA.TTF") format("truetype");
     }
 .imagenLogo{
     width: 100px;
 }
 .navbar{
     background-color: black;
+    border: solid #ed3ca0;
 }
 .nav-item a{
     color: white;
     font-family: "TT font";
     text-transform: uppercase;
+    font-size: 20px;
+    margin: 10px;
+    letter-spacing: 1px;
 }
 
 .nav-item a:hover{
-    color: rgb(253, 3, 232);
+    color: #ed3ca0;
 }

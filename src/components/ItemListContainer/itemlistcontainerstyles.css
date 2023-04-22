@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "TT font";
+    src: local("TT font"),
+     url("../../fonts/NHLBUF06.ttf") format("truetype");
+    }
+
+.bodyCatalogue{
+    background-color: black;
+}
+.bodyCatalogue h2{
+    font-family: TT font;
+    color: white;
+}

@@ -1,18 +1,23 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import './itemstyles.css'
 
-export const Item = ({id, description, price, image}) => {
+export const Item = ({id, description, price, image, category}) => {
   return (
     <div>
-       <Card style={{ width: '18rem' }}>
+       <Card className='cardCat' style={{ width: '30rem', height:'54rem'}}>
       <Card.Img variant="top" src={image} />
       <Card.Body>
-      <Card.Title>{id}</Card.Title>
-        <Card.Title>{description}</Card.Title>
+      <Card.Title><p>{id}</p></Card.Title>
+        <Card.Title><h1>{description}</h1></Card.Title>
+        <Card.Title>{category}</Card.Title>
         <Card.Text>
-          {price}
+          ${price}
         </Card.Text>
-        <Button variant="primary">Buy</Button>
+        <Link to={`/detail/${id}`}>
+        <Button variant="primary">See more</Button>
+        </Link>
       </Card.Body>
     </Card>
     </div>

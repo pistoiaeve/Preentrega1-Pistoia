@@ -19,8 +19,8 @@ export const ItemCount = () =>{
     }
 
     return(<>
-    <h4>Cantidad: {counter}</h4>
     <div className="contador">
+    <h4>{counter}</h4>
         <button onClick={sumar}> + </button>
         <button onClick={restar}> - </button>
         <button onClick={resetear}> Restart </button>

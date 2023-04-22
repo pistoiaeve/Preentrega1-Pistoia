@@ -1,0 +1,23 @@
+
+.cardCat{
+    background-color:  black ;
+    font-family: TT font;
+    border: solid #ed3ca0;
+    color:white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cardCat h1{
+ font-size: 20px;
+ color:white ;
+}
+.cardCat button{
+    background-color: #ed3ca0;
+    border: black;
+    color: white;
+}
+.cardCat button:hover{
+    background-color: white;
+    border: #ed3ca0 solid; 
+    color: black;
+}
