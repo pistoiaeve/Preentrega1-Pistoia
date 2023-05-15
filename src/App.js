@@ -5,16 +5,45 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { ItemCount } from './components/ItemCount/ItemCount';
 // import{Pika} from './components/Pika/Pika';
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer';
+import { CartScreen } from './components/CartScreen/CartScreen';
 import { 
   BrowserRouter as Router,
   Routes, 
   Navigate,
   Route,
-} from 'react-router-dom'
+} from 'react-router-dom';
+import { CartContext } from './components/context/CartContext';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [carrito, setCarrito] = useState([])
+
+  const addToCart =(item)=>{
+    setCarrito([...carrito,item])
+  }
+
+  const calcularCantidad =()=>{
+    return carrito.reduce((acc, prod) => acc + prod.counter, 0)
+  }
+  
+  const precioTotal=() =>{
+    return carrito.reduce((acc, prod) => acc + prod.price * prod.counter, 0)
+  }
+
+  const removerItem=(itemId)=>{
+    const newCart = carrito.filter((prod)=> prod.id !== itemId)
+    setCarrito(newCart)
+  }
   return (
+    <CartContext.Provider value={{
+      addToCart,
+      calcularCantidad,
+      precioTotal,
+      removerItem,
+      carrito,
+    }}>
   <div className='App'>
     <Router>
       <NavBar/>
@@ -25,9 +54,11 @@ function App() {
         <Route path='*' element={<Navigate to='/' />}/>
         <Route path='/productos/:categoryId' element={<ItemListContainer/>} />
         <Route path='/detail/:itemId' element={<ItemDetailContainer/>} /> 
+        <Route path='/cart' element={<CartScreen/>}/>
       </Routes>
     </Router>
   </div>
+  </CartContext.Provider>
   );
 }
 

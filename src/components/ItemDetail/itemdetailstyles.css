@@ -1,5 +1,6 @@
 .cardDescription img{
-        width: 29rem;
+        width:29rem;
+        height: 40rem;
         align-self: center;
 }
 
@@ -27,4 +28,16 @@
 .cardBody{
     display: flex;
     flex-direction: column;
+}
+.goBack{
+    background-color: black;
+    border:  #ed3ca0 solid;
+    margin-top: 3px;
+    width: 80px;
+    height: 50px;
+    align-self: center;
+}
+.goBack:hover{
+    background-color: #ed3ca0;
+    border: black solid;
 }
