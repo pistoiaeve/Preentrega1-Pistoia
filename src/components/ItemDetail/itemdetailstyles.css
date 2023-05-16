@@ -1,7 +1,8 @@
 .cardDescription img{
-        width:29rem;
-        height: 40rem;
+        width: 25rem;
+        height: auto;
         align-self: center;
+        padding-top: 1rem;
 }
 
 .cardDescription{
@@ -35,9 +36,30 @@
     margin-top: 3px;
     width: 80px;
     height: 50px;
-    align-self: center;
+    font-size: 1.7rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .goBack:hover{
+    background-color: #ed3ca0;
+    border: black solid;
+}
+.descriptionFooter{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.goCart{
+    font-size: 10px;
+    background-color: black;
+    border:  #ed3ca0 solid;
+    margin-top: 3px;
+    width: 80px;
+    height: 50px;
+}
+.goCart:hover{
     background-color: #ed3ca0;
     border: black solid;
 }

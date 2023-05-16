@@ -4,7 +4,10 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import { CartWidget } from '../CartWidget/CartWidget';
+import {AiOutlineArrowLeft} from 'react-icons/ai';
 import './itemdetailstyles.css'
+
 
 export const ItemDetail = ({ id, name, description, price, image, itemdescription, category, imagedescription, stock }) => {
 
@@ -36,18 +39,23 @@ export const ItemDetail = ({ id, name, description, price, image, itemdescriptio
 
   return (
     <div className='cardDescription'>
-      <Card style={{ width: '30rem', height: '68rem', border: '#ed3ca0 solid' }}>
+      <Card style={{ width: '30rem', height: 'auto', border: '#ed3ca0 solid' }}>
         <Card.Img variant="top" src={imagedescription} />
+        <hr/>
         <Card.Body className='cardBody'>
           <Card.Title><h1>{description}</h1></Card.Title>
+          <hr/>
           <p>{itemdescription}</p>
           <Card.Text>
             <h3>${price}</h3>
           </Card.Text>
           <ItemCount max={stock} modify={setCounter} cantidad={counter} />
           <Button className='addToCart' onClick={sumarAlCarrito}>Add to cart</Button>
-          <Button className='goBack' onClick={goBack}>GO BACK</Button>
-          <Link to='/cart' className='btn btn-dark'>Cart</Link>
+          <hr/>
+          <div className='descriptionFooter'> 
+          <Button className='goBack' onClick={goBack}><AiOutlineArrowLeft/></Button>
+          <Link to='/cart' className='btn btn-dark goCart'><CartWidget/></Link>
+          </div>
         </Card.Body>
       </Card>
     </div>

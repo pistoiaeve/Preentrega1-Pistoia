@@ -8,6 +8,7 @@ import firebase from 'firebase';
 import 'firebase/firestore'
 import { getFirestore } from '../../firebase/config';
 import Swal from 'sweetalert2';
+import './Checkout.css'
 
 export const Checkout = () => {
 
@@ -21,6 +22,12 @@ export const Checkout = () => {
 
   const[phone, setPhone] = useState("")
 
+  const[newsletter, setNewsletter] = useState(false)
+
+  function switchNewsletter(){
+    setNewsletter(!newsletter)
+  }
+
   const handleSubmit = (e)=>{
   e.preventDefault()
 
@@ -30,6 +37,7 @@ export const Checkout = () => {
       name,
       surname,
       phone,
+      newsletter,
     },
     item: carrito,
     total_price: precioTotal(),
@@ -46,6 +54,8 @@ export const Checkout = () => {
         icon: 'success',
         title: 'Your order has been received!',
         text: `Order number: ${res.id}`,
+        color: 'black', 
+        customClass: 'swalNoti',
         willClose: ()=>{
           vaciarCarrito()
         }
@@ -69,15 +79,12 @@ export const Checkout = () => {
   
 
   return (
-    <div>
-        <h3>Contact information</h3>
+    <div className='checkoutInfo'>
+        <h1>Contact information</h1>
         <hr/>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className='formSubmit'>
       <Form.Group className="mb-3" >
         <Form.Control type="email" placeholder="Enter email adress" onChange={(e)=> setEmail(e.target.value)}  value={email}/>
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Control type="text" placeholder="First name" onChange={(e)=> setName(e.target.value)}  value={name}/>
@@ -89,12 +96,14 @@ export const Checkout = () => {
         <Form.Control type="number" placeholder=" Phone number" onChange={(e)=> setPhone(e.target.value)}  value={phone}/>
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Check type="checkbox" label="Suscribe to the newsletter" />
+        <Form.Check type="checkbox" label="Suscribe to the newsletter" onChange={switchNewsletter}  value={newsletter}/>
       </Form.Group>
+      <div className='formFooter'>
       <Link to='/cart' className='returnCart'><AiOutlineArrowLeft/>Return to cart</Link>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className='submitButton'>
         Submit
       </Button>
+      </div>
     </Form>
      </div>
   )

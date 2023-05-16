@@ -1,0 +1,45 @@
+.checkoutInfo{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65rem;
+}
+.checkoutInfo h1{
+    font-family: TT font; 
+    color: white;
+    padding-top: 2rem;
+    font-size: 3rem;
+    letter-spacing: 0.7rem;
+}
+.formSubmit{
+    color: white;
+    margin-top: 3rem;
+}
+.returnCart{
+    text-decoration: none;
+    color: white;
+}
+.returnCart:hover{
+    color: #ed3ca0;
+}
+.submitButton{
+    background-color: #ed3ca0;
+    font-family: TT font;
+    width: 10rem;
+    border: solid white;
+}
+.submitButton:hover{
+    background-color: black;
+    border: solid #ed3ca0
+}
+.formFooter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+    gap: 30rem;
+}
+.swalNoti{
+    font-family: TT font;
+}
