@@ -3,9 +3,10 @@ import { Card, Button } from 'react-bootstrap';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 import './itemdetailstyles.css'
 
-export const ItemDetail = ({ id, description, price, image, itemdescription, category, imagedescription, stock }) => {
+export const ItemDetail = ({ id, name, description, price, image, itemdescription, category, imagedescription, stock }) => {
 
   const navigate = useNavigate()
 
@@ -20,6 +21,7 @@ export const ItemDetail = ({ id, description, price, image, itemdescription, cat
   const sumarAlCarrito = () => {
     const newItem = {
       id,
+      name,
       description,
       image,
       price,
@@ -45,6 +47,7 @@ export const ItemDetail = ({ id, description, price, image, itemdescription, cat
           <ItemCount max={stock} modify={setCounter} cantidad={counter} />
           <Button className='addToCart' onClick={sumarAlCarrito}>Add to cart</Button>
           <Button className='goBack' onClick={goBack}>GO BACK</Button>
+          <Link to='/cart' className='btn btn-dark'>Cart</Link>
         </Card.Body>
       </Card>
     </div>

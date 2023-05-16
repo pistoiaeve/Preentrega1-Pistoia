@@ -39,7 +39,7 @@ export const stock =[
         stock: 20,
     },
     {
-        id: 4,
+        id: 3,
         description: "Wink For Me Babydoll Dress - Yellow",
         price: 7.537,
         image: winkdress,
@@ -49,8 +49,8 @@ export const stock =[
         stock: 20,
     },
     {
-        id: 5,
-        description: "Modulation Liquid Velvet Pleated Micro Skirt",
+        id: 4,
+        description: "Mdoulation Liquid Velvet Pleated Micro Skirt",
         price: 12.215,
         image: modulationskirt,
         itemdescription:"DARKER WAVS Modulation Liquid Velvet Pleated Micro Skirt in shiny black vinyl with wide waistband construction. All over pleated design, low rise fit, embroidered  D logo on front side, and hidden button flap closure with adjustable grommet belt hardware.",
@@ -60,7 +60,7 @@ export const stock =[
 
     },
     {   
-        id: 6,
+        id: 5,
         description: "True Spells Midi Dress",
         price: 19.601,
         image: truedress,
@@ -71,7 +71,7 @@ export const stock =[
         
     },
     {
-        id: 7,
+        id: 6,
         description: "Mystical Transformation Mini Dress",
         price: 24.432,
         image: mysticaldress,
@@ -81,7 +81,7 @@ export const stock =[
         stock: 20,
     },
     {
-        id: 8,
+        id: 7,
         description: "Myth In Bloom Lace Skirt",
         price: 12.991,
         image: mythskirt,
@@ -91,7 +91,7 @@ export const stock =[
         stock: 20,
     },
     {
-        id: 9,
+        id: 8,
         description: "Dance With Death Maxi Dress",
         price: 21.316,
         image: dancedress,
@@ -101,7 +101,7 @@ export const stock =[
         stock: 20,
     },
     {
-        id: 10,
+        id: 9,
         description: "A Greater Love Mini Skirt",
         price: 10.352,
         image: greatskirt,

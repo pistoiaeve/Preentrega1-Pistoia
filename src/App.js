@@ -12,38 +12,16 @@ import {
   Navigate,
   Route,
 } from 'react-router-dom';
-import { CartContext } from './components/context/CartContext';
-import { useState } from 'react';
-
+import { CartProvider } from './components/context/CartContext';
+import { UiProvider } from './components/context/UIContext';
+import { Checkout } from './components/Checkout/Checkout';
 
 function App() {
 
-  const [carrito, setCarrito] = useState([])
 
-  const addToCart =(item)=>{
-    setCarrito([...carrito,item])
-  }
-
-  const calcularCantidad =()=>{
-    return carrito.reduce((acc, prod) => acc + prod.counter, 0)
-  }
-  
-  const precioTotal=() =>{
-    return carrito.reduce((acc, prod) => acc + prod.price * prod.counter, 0)
-  }
-
-  const removerItem=(itemId)=>{
-    const newCart = carrito.filter((prod)=> prod.id !== itemId)
-    setCarrito(newCart)
-  }
   return (
-    <CartContext.Provider value={{
-      addToCart,
-      calcularCantidad,
-      precioTotal,
-      removerItem,
-      carrito,
-    }}>
+    <UiProvider>
+ <CartProvider>
   <div className='App'>
     <Router>
       <NavBar/>
@@ -52,13 +30,15 @@ function App() {
         {/*<Route path='/counter' element={<ItemCount/>} />
         <Route path='/pika' element={<Pika/>}/>*/}
         <Route path='*' element={<Navigate to='/' />}/>
+        <Route path='/checkout' element={<Checkout/>}/>
         <Route path='/productos/:categoryId' element={<ItemListContainer/>} />
         <Route path='/detail/:itemId' element={<ItemDetailContainer/>} /> 
         <Route path='/cart' element={<CartScreen/>}/>
       </Routes>
     </Router>
   </div>
-  </CartContext.Provider>
+  </CartProvider>
+  </UiProvider>
   );
 }
 

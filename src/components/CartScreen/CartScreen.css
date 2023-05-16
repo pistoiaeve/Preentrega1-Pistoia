@@ -1,0 +1,55 @@
+.listado{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    color: white;
+    padding: 2rem;
+}
+
+.descriptionList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cartBody{
+    background-color: black;
+    font-family: "TT font";
+    text-align: center;
+    color: white;
+}
+.cartBody h1{
+    text-align: center;
+    color: white;
+    padding-top: 1rem;
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+
+}
+.cartBody strong{
+    font-size: 1.7rem;
+}
+.cartBody hr{
+    border:solid #ed3ca0;
+}
+
+.cartBody Button:hover{
+    background-color: white;
+    color: black;
+}
+.cartBody h3{
+    padding: 3rem;
+    font-size: 3rem;
+}
+.link{
+    font-size: 1.2rem;
+}
+.checkoutBtn{
+    font-size: 1.3rem;
+    background-color: #ed3ca0;
+    border: black solid;
+}
+.checkoutBtn:hover{
+    background-color: white;
+    color: black;
+}

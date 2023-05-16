@@ -1,5 +1,6 @@
 import React, { useEffect , useState } from 'react';
-import {pedirProductos} from '../../helpers/pedirProductos';
+//import {pedirProductos} from '../../helpers/pedirProductos';
+import {getFirestore} from '../../firebase/config'
 import Spinner from 'react-bootstrap/Spinner';
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom';
@@ -14,15 +15,28 @@ export const ItemDetailContainer = () => {
     const {itemId} = useParams()
 
     useEffect(()=>{
-        setLoading(true)
-        pedirProductos()
-        .then(res=>{
-            setItem(res.find(prod => prod.id === Number(itemId)))
+       setLoading(true)
+        //pedirProductos()
+        //.then(res=>{
+        //    setItem(res.find(prod => prod.id === Number(itemId)))
+       // })
+        //.catch((error)=> console.log(error))
+       // .finally(()=>{
+         //   setLoading(false)
+        const db = getFirestore()
+        const productos = db.collection('productos')
+        const item = productos.doc(itemId)
+        item.get()
+        .then((doc)=>{
+          setItem({
+            id: doc.id, ...doc.data()
+          })
         })
-        .catch((error)=> console.log(error))
+        .catch((err)=> console.log(err))
         .finally(()=>{
-            setLoading(false)
+          setLoading(false)
         })
+        
     },[itemId])
   return (
     <section className='itemDetails'>
